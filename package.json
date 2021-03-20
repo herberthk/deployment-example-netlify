@@ -8,6 +8,7 @@
     "netlify-cli": "^2.68.0"
   },
   "scripts": {
+    "migrate":"prisma migrate dev --name init --preview-feature"
     "build": "prisma generate",
     "dev": "netlify dev"
   },
