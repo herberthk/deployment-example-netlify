@@ -8,11 +8,13 @@
     "netlify-cli": "^2.68.0"
   },
   "scripts": {
-    "migrate":"prisma migrate dev --name init --preview-feature"
-    "build": "prisma generate",
+    "migrate":"prisma migrate dev --name init --preview-feature",
+    "gen": "prisma generate",
+    "build": "concurrently \"npm run migrate\" \"npm run gen\"",
     "dev": "netlify dev"
   },
   "dependencies": {
     "@prisma/client": "2.10.2"
+    "concurrently":"6.0.0"
   }
 }
